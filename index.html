@@ -20,48 +20,47 @@
             padding: 24px 16px;
         }
 
-        /* Semantic Layout Elements */
         header {
             background-color: #0f172a;
             color: #ffffff;
-            padding: 36px 20px 24px;
+            padding: 40px 24px 28px;
             text-align: center;
             border-radius: 8px;
             max-width: 860px;
             margin: 0 auto 24px;
+            border-top: 3px solid #3b82f6;
         }
 
         header h1 {
-            font-size: 1.85rem;
+            font-size: 2rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-            margin-bottom: 6px;
-        }
-
-        header p {
-            font-size: 1rem;
-            color: #94a3b8;
+            margin-bottom: 16px;
         }
 
         nav {
-            margin-top: 18px;
+            margin-top: 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 8px;
         }
 
         nav a {
-            color: #cbd5e1;
+            color: #94a3b8;
             text-decoration: none;
-            font-size: 0.95rem;
-            padding: 4px 8px;
-            border-radius: 4px;
+            font-size: 0.9rem;
+            padding: 5px 14px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
         }
 
         nav a:hover {
             color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         main {
@@ -85,7 +84,6 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* 1 & 2. Profile Intro & Text Formatting */
         .profile-text p {
             margin-bottom: 10px;
         }
@@ -95,13 +93,12 @@
         }
 
         mark {
-            background-color: #fef08a;
-            color: #854d0e;
+            background-color: #f0f4f8;
+            color: #1e293b;
             padding: 2px 4px;
             border-radius: 2px;
         }
 
-        /* 4. Academic Table */
         .table-wrap {
             overflow-x: auto;
             margin-top: 12px;
@@ -130,7 +127,6 @@
             background-color: #f8fafc;
         }
 
-        /* 5. Multimedia */
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -162,7 +158,6 @@
             border-radius: 4px;
         }
 
-        /* 3. Form */
         form {
             display: flex;
             flex-direction: column;
@@ -229,7 +224,6 @@
             background-color: #334155;
         }
 
-        /* 7. Interactive Elements */
         details {
             border: 1px solid #e2e8f0;
             border-radius: 4px;
@@ -266,7 +260,6 @@
             background-color: #f1f5f9;
         }
 
-        /* 6. Footer */
         footer {
             text-align: center;
             padding: 20px 0;
@@ -283,7 +276,6 @@
     <!-- 6. Semantic Elements: header & nav -->
     <header>
         <h1>Md. Saidul Islam Ropak</h1>
-        <p>Student, Ostad Python &amp; Django Full-Stack Web Development</p>
         <nav>
             <a href="#about">About</a>
             <a href="#academics">Education</a>
@@ -293,26 +285,30 @@
         </nav>
     </header>
 
+    <!-- 6. Semantic Elements: main -->
     <main>
 
-        <!-- 1. Structural Tags & 2. Text Formatting -->
+        <!-- 1. Structural Tags & 2. Text Formatting (bold, italic, underline, highlight) -->
         <section id="about">
             <h2>About Me</h2>
             <div class="profile-text">
                 <p>
-                    My name is <b>Md. Saidul Islam Ropak</b>. I study <i>web development and database design</i> with Ostad.
+                    Hi, I'm <b>Md. Saidul Islam Ropak</b>.
+                    I finished my M.Sc. in Chemistry from MBSTU, and now I'm teaching myself
+                    <i>full-stack web development</i> through the Ostad program.
                 </p>
                 <p>
-                    I focus on <u>Python and Django backends</u>, relational tables, and frontend basics.
-                    My goal is to write <mark>clear, maintainable software</mark> for everyday workflows.
+                    Most of my time goes into <u>building backends with Python and Django</u>,
+                    writing SQL, and figuring out how HTML and CSS actually work together.
+                    I like things that are <mark>simple and easy to maintain</mark> — no extra complexity if I can avoid it.
                 </p>
                 <p>
-                    Outside coursework, I read chemistry papers and experiment with local tools.
+                    When I'm not coding, I'm probably reading a research paper or tinkering with some new tool I found online.
                 </p>
             </div>
         </section>
 
-        <!-- 4. Table: Academic Information (at least 3 rows and 3 columns) -->
+        <!-- 4. Table: Academic Information (4 rows, 4 columns) -->
         <section id="academics">
             <h2>Academic Background</h2>
             <div class="table-wrap">
@@ -360,18 +356,20 @@
             <h2>Media Gallery</h2>
             <div class="media-grid">
                 <div class="media-item">
-                    <img src="assets/images/profile.jpg" alt="Gallery Photo">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" alt="Nature Landscape">
                 </div>
                 <div class="media-item">
-                    <audio controls preload="metadata">
-                        <source src="assets/media/sample-audio.wav" type="audio/wav">
+                    <audio controls>
+                        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
                 <div class="media-item">
-                    <video controls preload="metadata" poster="assets/images/profile.jpg">
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                    <video controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                        Your browser does not support the video element.
                     </video>
                 </div>
             </div>
