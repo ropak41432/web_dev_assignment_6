@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile - Md. Rupok Chowdhury</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #d69e2e;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0 1rem 2rem 1rem;
+        }
+
+        /* 6. Semantic Elements: header & nav */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            margin-top: 1.25rem;
+        }
+
+        nav a {
+            color: #edf2f7;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 0.75rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* 6. Semantic Elements: main & section */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+        }
+
+        /* 1 & 2. Text Formatting & Profile Layout */
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-bio {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .profile-bio p {
+            margin-bottom: 0.75rem;
+        }
+
+        /* 2. Text formatting explicit styles */
+        mark {
+            background-color: #fefcbf;
+            color: #744210;
+            padding: 0.15rem 0.35rem;
+            border-radius: 3px;
+        }
+
+        /* 4. Academic Table */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ebf8ff;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        tr:hover {
+            background-color: #edf2f7;
+        }
+
+        /* 5. Multimedia */
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .media-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            background: #fafafa;
+        }
+
+        .media-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        audio,
+        video {
+            width: 100%;
+            margin-top: 0.5rem;
+            border-radius: 6px;
+        }
+
+        /* 3. Form */
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            padding: 0.6rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+        }
+
+        .inline-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 0.25rem;
+        }
+
+        .inline-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            justify-self: start;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* 7. Interactive Elements */
+        details {
+            background: #edf2f7;
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        details[open] {
+            background: #ebf8ff;
+        }
+
+        summary {
+            font-weight: 600;
+            color: var(--secondary-color);
+            user-select: none;
+        }
+
+        .details-content {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #cbd5e0;
+        }
+
+        .action-btn {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .action-btn:hover {
+            background-color: #1a365d;
+        }
+
+        /* 6. Semantic Elements: footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 6. Semantic Elements: <header> and <nav> -->
+    <header>
+        <h1>Md. Rupok Chowdhury</h1>
+        <p>Full-Stack Web Developer &amp; Data Analysis Enthusiast</p>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#academics">Academics</a>
+            <a href="#multimedia">Multimedia</a>
+            <a href="#contact">Contact Form</a>
+            <a href="#more-info">More Details</a>
+        </nav>
+    </header>
+
+    <!-- 6. Semantic Elements: <main> -->
+    <main>
+
+        <!-- 1. Structural Tags & 2. Text Formatting -->
+        <section id="about">
+            <h2>About Myself</h2>
+            <div class="profile-container">
+                <!-- 5. Multimedia: Image -->
+                <img src="assets/images/profile.jpg" alt="Profile Picture of Md. Rupok Chowdhury" class="profile-img">
+
+                <div class="profile-bio">
+                    <p>
+                        Hello! My name is <b>Md. Rupok Chowdhury</b>. I am a passionate web developer with a keen interest
+                        in <i>modern full-stack engineering</i>, relational databases, and data analytical pipelines.
+                    </p>
+                    <p>
+                        Currently, I am completing the <u>Ostad Python with Django Full-Stack Web Development Course</u>.
+                        My technical learning focuses on building <mark>robust, scalable, and responsive web applications</mark>
+                        that solve everyday workflow challenges.
+                    </p>
+                    <p>
+                        I love solving algorithmic puzzles, crafting clean database schemas, and writing maintainable code.
+                        In my spare time, I enjoy reading scientific literature and exploring modern development tools.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Table: Academic Information (at least 3 rows, 3 columns) -->
+        <section id="academics">
+            <h2>Academic Background</h2>
+            <p>Below is a summary of my academic achievements, institutions, and completed degrees:</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Degree / Certificate</th>
+                            <th>Institution / Board</th>
+                            <th>Year of Completion</th>
+                            <th>Result / Division</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Master of Science (M.Sc.) in Chemistry</td>
+                            <td>Mawlana Bhashani Science and Technology University (MBSTU)</td>
+                            <td>2024</td>
+                            <td>First Class (CGPA: 3.75 / 4.00)</td>
+                        </tr>
+                        <tr>
+                            <td>Bachelor of Science (B.Sc. Hons) in Chemistry</td>
+                            <td>Mawlana Bhashani Science and Technology University (MBSTU)</td>
+                            <td>2022</td>
+                            <td>First Class (CGPA: 3.68 / 4.00)</td>
+                        </tr>
+                        <tr>
+                            <td>Higher Secondary Certificate (HSC)</td>
+                            <td>Dhaka Board</td>
+                            <td>2017</td>
+                            <td>GPA 5.00 / 5.00</td>
+                        </tr>
+                        <tr>
+                            <td>Secondary School Certificate (SSC)</td>
+                            <td>Dhaka Board</td>
+                            <td>2015</td>
+                            <td>GPA 5.00 / 5.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Multimedia: Image, Audio & Video Elements -->
+        <section id="multimedia">
+            <h2>Multimedia Gallery</h2>
+            <p>Demonstrating integration of media elements including images, audio player, and video player:</p>
+            <div class="media-container">
+                <!-- Audio Player -->
+                <div class="media-card">
+                    <h3>Profile Audio Sample</h3>
+                    <p>Short audio clip demonstrating the HTML5 <code>&lt;audio&gt;</code> element:</p>
+                    <audio controls preload="metadata">
+                        <source src="assets/media/sample-audio.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- Video Player -->
+                <div class="media-card">
+                    <h3>Featured Introduction Video</h3>
+                    <p>Demonstration of HTML5 <code>&lt;video&gt;</code> element:</p>
+                    <video controls preload="metadata" poster="assets/images/profile.jpg">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Form: Name, Email, Password, Gender (Radio), Hobbies (Checkboxes), Submit -->
+        <section id="contact">
+            <h2>Get in Touch (Contact Form)</h2>
+            <form action="#" method="post" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full_name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-address">Email Address:</label>
+                    <input type="email" id="email-address" name="email_address" class="form-control" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-password">Password:</label>
+                    <input type="password" id="user-password" name="user_password" class="form-control" placeholder="Create a secure password" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="inline-group">
+                        <label>
+                            <input type="radio" name="gender" value="male" required> Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female"> Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other"> Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Hobbies / Interests:</label>
+                    <div class="inline-group">
+                        <label>
+                            <input type="checkbox" name="hobbies" value="coding"> Web Development &amp; Coding
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hobbies" value="reading"> Reading Research Papers
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hobbies" value="gaming"> Gaming &amp; Tech
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hobbies" value="traveling"> Traveling
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Profile Form</button>
+            </form>
+        </section>
+
+        <!-- 7. Interactive Elements: <details>, <summary>, and clickable button -->
+        <section id="more-info">
+            <h2>Additional Information &amp; Interactive Features</h2>
+
+            <!-- <details> and <summary> elements -->
+            <details>
+                <summary>Click to view Career Goals &amp; Philosophy</summary>
+                <div class="details-content">
+                    <p>
+                        My objective is to leverage modern web technologies (Django, Python, PostgreSQL, and JavaScript)
+                        to engineer resilient software applications. I believe continuous learning and attention to detail
+                        are the foundation of great engineering.
+                    </p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Click to view Key Technical Skills</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Languages:</strong> Python, JavaScript, HTML5, CSS3, SQL</li>
+                        <li><strong>Frameworks &amp; Libraries:</strong> Django, Django REST Framework, Bootstrap</li>
+                        <li><strong>Database Systems:</strong> PostgreSQL, MySQL, SQLite</li>
+                        <li><strong>Tools:</strong> Git, GitHub, VS Code, Postman, Linux CLI</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Clickable button -->
+            <div style="margin-top: 1.25rem;">
+                <p>Click the interactive button below to see a greeting message:</p>
+                <button type="button" class="action-btn" onclick="alert('Thank you for visiting my personal profile webpage!')">
+                    Click Me for Welcome Message
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. Semantic Elements: <footer> -->
+    <footer>
+        <p>&copy; 2026 Md. Rupok Chowdhury. All rights reserved. | Built for Ostad Web Development Assignment 6</p>
+    </footer>
+
+</body>
+
+</html>
