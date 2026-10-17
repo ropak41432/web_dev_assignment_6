@@ -21,46 +21,64 @@
         }
 
         header {
-            background-color: #0f172a;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
             color: #ffffff;
-            padding: 40px 24px 28px;
+            padding: 44px 24px 30px;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 12px;
             max-width: 860px;
             margin: 0 auto 24px;
-            border-top: 3px solid #3b82f6;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25), 0 8px 10px -6px rgba(15, 23, 42, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
         }
 
         header h1 {
-            font-size: 2rem;
+            font-size: 2.15rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         nav {
             margin-top: 0;
-            padding-top: 16px;
+            padding-top: 18px;
             border-top: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
 
         nav a {
-            color: #94a3b8;
+            color: #cbd5e1;
             text-decoration: none;
-            font-size: 0.9rem;
-            padding: 5px 14px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 6px 16px;
             border-radius: 20px;
-            border: 1px solid transparent;
-            transition: all 0.2s;
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.2s ease;
         }
 
         nav a:hover {
             color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
         }
 
         main {
@@ -360,8 +378,8 @@
                 </div>
                 <div class="media-item">
                     <audio controls>
-                        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        <source src="https://assets.mixkit.co/active_storage/sfx/2432/2432-preview.mp3" type="audio/mpeg">
+                        <source src="assets/media/forest-birds.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
